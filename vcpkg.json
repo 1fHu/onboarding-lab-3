@@ -8,7 +8,8 @@
   ],
   "license": "CC0-1.0",
   "dependencies": [
-    "nyu-cmake"
+    "nyu-cmake",
+    "catch2"
   ],
   "vcpkg-configuration": {
     "default-registry": {

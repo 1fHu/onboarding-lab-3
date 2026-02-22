@@ -6,6 +6,7 @@ project(week-three-lab)
 enable_testing()
 
 find_package(nyu-cmake CONFIG REQUIRED)
+find_package(Catch2 3 CONFIG REQUIRED)
 
 add_executable(exercise1 dv/exercise1.cpp)
 target_compile_features(exercise1 PRIVATE cxx_std_20)
@@ -15,6 +16,7 @@ add_test(NAME exercise1 COMMAND exercise1)
 
 add_executable(exercise2 dv/exercise2.cpp)
 target_compile_features(exercise2 PRIVATE cxx_std_20)
+target_link_libraries(exercise2 PRIVATE Catch2::Catch2WithMain)
 nyu_add_sv(exercise2 rtl/Exercise2.sv)
 nyu_target_verilate(exercise2 TOP_MODULES Exercise2)
 add_test(NAME exercise2 COMMAND exercise2)
