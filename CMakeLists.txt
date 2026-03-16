@@ -26,6 +26,7 @@ target_compile_features(exercise3 PRIVATE cxx_std_20)
 nyu_add_sv(exercise3
   rtl/Exercise3.sv rtl/Mysteries/Mystery1.sv rtl/Mysteries/Mystery2.sv
 )
+target_link_libraries(exercise3 PRIVATE Catch2::Catch2WithMain)
 nyu_target_verilate(exercise3 TOP_MODULES Exercise3)
 add_test(NAME exercise3 COMMAND exercise3)
 
