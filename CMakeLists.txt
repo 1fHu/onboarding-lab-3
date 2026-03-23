@@ -32,6 +32,7 @@ add_test(NAME exercise3 COMMAND exercise3)
 
 add_executable(exercise4 dv/exercise4.cpp)
 target_compile_features(exercise4 PRIVATE cxx_std_20)
+target_link_libraries(exercise4 PRIVATE Catch2::Catch2WithMain)
 nyu_add_sv(exercise4 rtl/Exercise4.sv)
 nyu_target_verilate(exercise4 TOP_MODULES Exercise4)
 add_test(NAME exercise4 COMMAND exercise4)
